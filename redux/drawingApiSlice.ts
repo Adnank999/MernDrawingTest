@@ -1,6 +1,14 @@
 // src/features/drawing/drawingApiSlice.js
 
+import { ExcalidrawElement } from '@excalidraw/excalidraw/types/element/types';
+import { AppState } from '@excalidraw/excalidraw/types/types';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
+interface Drawing {
+  _id: string;
+  elements: ExcalidrawElement[];
+  appState: AppState;
+}
 
 export const drawingApiSlice = createApi({
   reducerPath: 'drawingApi',
@@ -21,11 +29,10 @@ export const drawingApiSlice = createApi({
       }),
       invalidatesTags: ['Drawings'],
     }),
-    getDrawings: builder.query({
+    getDrawings: builder.query<Drawing[],void>({
       query: () => ({
         url: 'drawings', 
         method: 'GET',
-      
       }),
       providesTags: ['Drawings'],
     }),
