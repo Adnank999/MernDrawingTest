@@ -38,7 +38,7 @@ export const drawingApiSlice = createApi({
     }),
     getDrawing: builder.query({
       query: (id) => ({
-        url: `/drawing/${id}`,
+        url: `drawing/${id}`,
         method: 'GET',
         
       }),
@@ -46,7 +46,7 @@ export const drawingApiSlice = createApi({
     }),
     updateDrawing: builder.mutation({
       query: ({id,payload}) => ({
-        url: `/drawing/${id}`,
+        url: `drawing/${id}`,
         method: 'PUT',
         body: payload,
       }),
@@ -54,7 +54,7 @@ export const drawingApiSlice = createApi({
     }),
     deleteDrawing: builder.mutation({
       query: (id) => ({
-        url: `/drawing/${id}`, 
+        url: `drawing/${id}`, 
         method: 'DELETE',
        
       }),
