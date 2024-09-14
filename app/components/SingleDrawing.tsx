@@ -14,8 +14,8 @@ interface DrawingProps {
 const SingleDrawing: React.FC<DrawingProps> = ({ id,index }) => {
   const { data: drawing, error, isLoading } = useGetDrawingQuery(id);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error fetching drawing: {error?.message}</p>;
+  // if (isLoading) return <p>Loading...</p>;
+  // if (error) return <p>Error fetching drawing: {error?.message}</p>;
 
   return (
     <div className="text-white">
