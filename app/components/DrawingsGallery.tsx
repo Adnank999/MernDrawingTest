@@ -5,6 +5,7 @@ import { ExcalidrawElement } from "@excalidraw/excalidraw/types/element/types";
 import { AppState } from "@excalidraw/excalidraw/types/types";
 import { Excalidraw } from "@excalidraw/excalidraw";
 import { DrawingDrawer } from "./DrawingDrawer";
+import Loader from "./Loader";
 interface Drawing {
   _id: string;
   elements: ExcalidrawElement[];
@@ -14,7 +15,7 @@ interface Drawing {
 const DrawingsGallery = () => {
   const { data, error, isLoading } = useGetDrawingsQuery();
 
-  // if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Loader/>;
   // if (error) return <p>Error fetching drawings: {error?.message}</p>;
 
   // console.log("Drawings", drawings);
