@@ -1,9 +1,20 @@
+import dynamic from 'next/dynamic'
 import React from 'react'
-import { Dashboard } from './components/Dashboard'
+
+const Dashboard = dynamic(() => import('../app/components/Dashboard'), {
+  ssr:false
+})
+
+
 
 const page = () => {
+
+
   return (
-    <Dashboard/>
+    <div>
+       <Dashboard/>
+    </div>
+   
   )
 }
 
