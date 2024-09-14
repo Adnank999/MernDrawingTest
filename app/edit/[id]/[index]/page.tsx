@@ -10,7 +10,7 @@ interface Props {
 }
 const page = ({ params }: Props) => {
 
-  console.log("INDEX",params?.index)
+  // console.log("INDEX",params?.index)
 
   return (
     <EditDrawings id={params?.id} index={params?.index}/>
